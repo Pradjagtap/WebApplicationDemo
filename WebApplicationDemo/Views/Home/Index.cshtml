@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>
+    @TempData["company"]
+</h3>
+<h3>
+    @ViewData["message"]
+</h3>
+
+<p>
+    @ViewData["message"]
+</p>
+
+<p>
+    ViewData["message"]
+</p>
+
+<h3>Cities List</h3>
+
+@if (ViewData["cities"] != null)
+{
+    <ol>
+        @foreach (string item in (IEnumerable<string>)ViewData["cities"])
+        {
+            <li>
+                @item
+            </li>
+        }
+    </ol>
+}
+<p>--------------------------------------------------</p>
+<p>using view bag</p>
+<p>
+    @ViewBag.Msg
+</p>
+
+<ol>
+    @foreach (string item in ViewBag.Cities)
+    {
+        <li>
+            @item
+        </li>
+    }
+</ol>
+
